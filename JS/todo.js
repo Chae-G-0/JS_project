@@ -13,6 +13,8 @@ function saveTodos() {
 function deleteTodo(e) {
   const li = e.target.parentElement;
   li.remove();
+  todos = todos.filter((todo) => todo.id !== parseInt(li.id));
+  saveTodos();
 }
 
 function paintTodo(newTodo) {
